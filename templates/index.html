@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog vs Cat Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Nhận diện Chó/Mèo</h1>
+
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <div class="upload-box" onclick="document.getElementById('file-input').click();">
+                <img id="preview" src="#" alt="Preview">
+                <p id="upload-text">Nhấp để chọn ảnh từ máy tính</p>
+                <input type="file" id="file-input" name="file" accept="image/*"
+                       style="display: none;" onchange="previewImage(this)">
+            </div>
+
+            <button type="submit">Phân tích ngay</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            <p>Kết quả dự đoán:</p>
+            <h2>{{ prediction }}</h2>
+            {% if confidence %}<small>Độ tin cậy: {{ confidence }}</small>{% endif %}
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function previewImage(input) {
+            const preview = document.getElementById('preview');
+            const text = document.getElementById('upload-text');
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                    text.style.display = 'none';
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>

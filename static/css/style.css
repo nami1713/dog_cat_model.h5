@@ -1,0 +1,81 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 450px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 25px;
+}
+
+.upload-box {
+    border: 2px dashed #dadce0;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-box:hover {
+    border-color: #1a73e8;
+    background-color: #f8f9fa;
+}
+
+#preview {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 8px;
+    display: none; /* Ẩn khi chưa có ảnh */
+    margin: 0 auto 15px;
+}
+
+input[type="file"] {
+    margin-bottom: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #1557b0;
+}
+
+.result {
+    margin-top: 25px;
+    padding: 15px;
+    background: #e8f0fe;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.result h2 {
+    margin: 0;
+    color: #1967d2;
+    font-size: 22px;
+}
