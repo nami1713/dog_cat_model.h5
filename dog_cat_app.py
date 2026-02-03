@@ -97,7 +97,7 @@ def index():
     return render_template("index.html", prediction=prediction, confidence=confidence)
 
 
-# Web Route phụ (Bootstrap style theo code cũ của bạn)
+# Web Route phụ
 @app1.route("/b", methods=["GET", "POST"])
 def index_b():
     prediction = None
@@ -121,4 +121,5 @@ if __name__ == "__main__":
         host="127.0.0.1",
         port=8001,
         debug=False
+
     )
